@@ -5,6 +5,9 @@ from sklearn.preprocessing import LabelEncoder
 from keras.models import load_model
 from keras import models, layers
 
+# Load trained model
+model = load_model("scream_detection_model.h5")
+
 # Load and preprocess the dataset
 def extract_features(file_path, mfcc=True, chroma=True, mel=True):
     y, sr = librosa.load(file_path, mono=True)
@@ -27,23 +30,6 @@ def predict_audio(file_path, model, label_encoder):
     prediction = model.predict(feature)
     predicted_label = label_encoder.inverse_transform([np.argmax(prediction)])[0]
     return "Scream" if predicted_label == 1 else "Non-Scream"
-
-# Define the model structure
-def create_model(input_shape):
-    model = models.Sequential()
-    model.add(layers.Dense(256, activation='relu', input_shape=(input_shape,)))
-    model.add(layers.Dropout(0.5))
-    model.add(layers.Dense(128, activation='relu'))
-    model.add(layers.Dropout(0.5))
-    model.add(layers.Dense(64, activation='relu'))
-    model.add(layers.Dropout(0.5))
-    model.add(layers.Dense(2, activation='softmax'))  # binary classification
-    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-    return model
-
-# Assume the model is already trained and loaded
-input_shape = 40  # example input shape, adjust accordingly
-model = create_model(input_shape)
 
 # Simulate label encoder for demonstration
 label_encoder = LabelEncoder()

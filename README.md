@@ -98,9 +98,9 @@ Jemin Prajapati
 🎓 Computer Science & Engineering (AI & ML)  
 💼 UI/UX & Machine Learning Enthusiast
 
-📧 Email: jemindev@example.com  
-🔗 LinkedIn: https://linkedin.com/in/jeminprajapati  
-💻 GitHub: https://github.com/jeminprajapati
+📧 Email: jeminprajapati30@gmail.com  
+🔗 LinkedIn: [https://linkedin.com/in/jeminprajapati  ](https://www.linkedin.com/in/jemin-prajapati-89b398363/)
+💻 GitHub:[ https://github.com/jeminprajapati](https://github.com/jemin1834)
 
 📃 License
 -----------
